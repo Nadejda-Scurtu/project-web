@@ -290,6 +290,7 @@
     <Content Include="Content\fonts\PlayfairDisplay\PlayfairDisplay-Bold.ttf" />
     <Content Include="Content\style\fonts\slick.ttf" />
     <Content Include="Content\style\fonts\slick.woff" />
+    <None Include=".gitignore" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_BackToTop.cshtml" />
