@@ -121,9 +121,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\ViewCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -223,6 +225,7 @@
     <Content Include="Content\images\thumb-03.jpg" />
     <Content Include="Content\style\animsition.min.css" />
     <Content Include="Content\style\bootstrap.min.css" />
+    <Content Include="Content\style\checkout.css" />
     <Content Include="Content\style\font-awesome.css" />
     <Content Include="Content\style\hamburgers.min.css" />
     <Content Include="Content\style\icon-font.min.css" />
@@ -297,6 +300,8 @@
     <Content Include="Views\Shop\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Checkout\Index.cshtml" />
+    <Content Include="Views\ViewCart\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -63,6 +63,11 @@ namespace WebAplication
            new CssRewriteUrlTransform()
                ));
 
+            bundles.Add(new StyleBundle("~/Content/checkout.css").Include(
+                     "~/Content/style/checkout.css",
+           new CssRewriteUrlTransform()
+               ));
+
             //Scripts
 
             bundles.Add(new Bundle("~/Scripts/bootstrap.min.js").Include(
