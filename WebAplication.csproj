@@ -123,6 +123,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -221,14 +222,17 @@
     <Content Include="Content\images\thumb-01.jpg" />
     <Content Include="Content\images\thumb-02.jpg" />
     <Content Include="Content\images\thumb-03.jpg" />
+    <Content Include="Content\style\ajax-loader.gif" />
     <Content Include="Content\style\animsition.min.css" />
     <Content Include="Content\style\bootstrap.min.css" />
     <Content Include="Content\style\font-awesome.css" />
     <Content Include="Content\style\hamburgers.min.css" />
     <Content Include="Content\style\icon-font.min.css" />
     <Content Include="Content\style\jquery-ui.min.css" />
+    <Content Include="Content\style\magnific-popup.css" />
     <Content Include="Content\style\main.css" />
     <Content Include="Content\style\material-design-iconic-font.min.css" />
+    <Content Include="Content\style\select2.min.css" />
     <Content Include="Content\style\slick-theme.css" />
     <Content Include="Content\style\slick.css" />
     <Content Include="Content\style\util.css" />
@@ -256,8 +260,10 @@
     <Content Include="Scripts\scr\isotope.pkgd.min.js" />
     <Content Include="Scripts\scr\jquery-3.2.1.min.js" />
     <Content Include="Scripts\scr\jquery-ui.min.js" />
+    <Content Include="Scripts\scr\jquery.magnific-popup.min.js" />
     <Content Include="Scripts\scr\main.js" />
     <Content Include="Scripts\scr\popper.min.js" />
+    <Content Include="Scripts\scr\select2.min.js" />
     <Content Include="Scripts\scr\slick-custom.js" />
     <Content Include="Scripts\scr\slick.js" />
     <Content Include="Scripts\scr\sweetalert.min.js" />
@@ -297,6 +303,7 @@
     <Content Include="Views\Shop\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\ProductDetail\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
