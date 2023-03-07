@@ -121,10 +121,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\ViewCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -134,6 +137,7 @@
   <ItemGroup>
     <Content Include="Content\images\about-01.jpg" />
     <Content Include="Content\images\about-02.jpg" />
+    <Content Include="Content\images\about_01.jpg" />
     <Content Include="Content\images\avatar-01.jpg" />
     <Content Include="Content\images\banner-01.jpg" />
     <Content Include="Content\images\banner-02.jpg" />
@@ -146,6 +150,7 @@
     <Content Include="Content\images\banner-09.jpg" />
     <Content Include="Content\images\bg-01.jpg" />
     <Content Include="Content\images\bg-02.jpg" />
+    <Content Include="Content\images\bg_01.jpg" />
     <Content Include="Content\images\blog-01.jpg" />
     <Content Include="Content\images\blog-02.jpg" />
     <Content Include="Content\images\blog-03.jpg" />
@@ -225,6 +230,7 @@
     <Content Include="Content\style\ajax-loader.gif" />
     <Content Include="Content\style\animsition.min.css" />
     <Content Include="Content\style\bootstrap.min.css" />
+    <Content Include="Content\style\checkout.css" />
     <Content Include="Content\style\font-awesome.css" />
     <Content Include="Content\style\hamburgers.min.css" />
     <Content Include="Content\style\icon-font.min.css" />
@@ -304,6 +310,9 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\ProductDetail\Index.cshtml" />
+    <Content Include="Views\Checkout\Index.cshtml" />
+    <Content Include="Views\ViewCart\Index.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

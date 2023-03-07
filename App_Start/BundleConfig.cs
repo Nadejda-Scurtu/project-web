@@ -68,6 +68,11 @@ namespace WebAplication
            new CssRewriteUrlTransform()
                ));
 
+            bundles.Add(new StyleBundle("~/Content/checkout.css").Include(
+                     "~/Content/style/checkout.css",
+           new CssRewriteUrlTransform()
+               ));
+
             bundles.Add(new StyleBundle("~/Content/select2.min.css").Include(
                      "~/Content/style/select2.min.css",
            new CssRewriteUrlTransform()
@@ -104,12 +109,6 @@ namespace WebAplication
 
             bundles.Add(new Bundle("~/Scripts/sweetalert.min.js").Include(
                    "~/Scripts/scr/sweetalert.min.js"));
-
-            bundles.Add(new Bundle("~/Scripts/select2.min.js").Include(
-                    "~/Scripts/scr/select2.min.js"));
-
-            bundles.Add(new Bundle("~/Scriptsjquery.magnific-popup.min.js").Include(
-                    "~/Scripts/scr/jquery.magnific-popup.min.js"));
         }
     }
 }
