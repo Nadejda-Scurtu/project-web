@@ -136,6 +136,7 @@
   <ItemGroup>
     <Content Include="Content\images\about-01.jpg" />
     <Content Include="Content\images\about-02.jpg" />
+    <Content Include="Content\images\about_01.jpg" />
     <Content Include="Content\images\avatar-01.jpg" />
     <Content Include="Content\images\banner-01.jpg" />
     <Content Include="Content\images\banner-02.jpg" />
@@ -148,6 +149,7 @@
     <Content Include="Content\images\banner-09.jpg" />
     <Content Include="Content\images\bg-01.jpg" />
     <Content Include="Content\images\bg-02.jpg" />
+    <Content Include="Content\images\bg_01.jpg" />
     <Content Include="Content\images\blog-01.jpg" />
     <Content Include="Content\images\blog-02.jpg" />
     <Content Include="Content\images\blog-03.jpg" />
