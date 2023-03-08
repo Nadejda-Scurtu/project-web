@@ -17,19 +17,19 @@ namespace WebAplication.Controllers
             products.Add(new Product { 
                 ProductId = 1, 
                 ProductName = "Product 1",
-                ProductImage = "/Content/images/product_01.jpg",
+                ProductImage = "/Content/images/product_1.png",
                 ProductPrice = 75 
             });
             products.Add(new Product { 
                 ProductId = 2, 
                 ProductName = "Product 2",
-                ProductImage = "/Content/images/product_02.jpg",
+                ProductImage = "/Content/images/product_2.png",
                 ProductPrice = 100 
             });
             products.Add(new Product {
                 ProductId = 3,
                 ProductName = "Product 3",
-                ProductImage = "/Content/images/product_03.jpg",
+                ProductImage = "/Content/images/product_3.png",
                 ProductPrice = 115 
             });
             products.Add(new Product
