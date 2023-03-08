@@ -25,6 +25,7 @@ _UpgradeReport_Files/
 bin/
 obj/
 TestResults/
+.vs/
 ###################
 # Web publish log #
 ###################
@@ -74,3 +75,12 @@ _[Ss]cripts
 *.nupkg
 *.ncrunchsolution
 *.dot[Cc]over
+
+
+######################
+#		Files		 #
+######################
+.vs/WebAplication/config/applicationhost.config
+.vs/WebAplication/v17/.suo
+.vs/
+obj/*.dll
