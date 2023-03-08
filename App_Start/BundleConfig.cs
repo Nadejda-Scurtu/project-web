@@ -53,6 +53,11 @@ namespace WebAplication
            new CssRewriteUrlTransform()
                ));
 
+            bundles.Add(new StyleBundle("~/Content/magnific-popup.css").Include(
+                     "~/Content/style/magnific-popup.css",
+           new CssRewriteUrlTransform()
+               ));
+
             bundles.Add(new StyleBundle("~/Content/slick-theme.css").Include(
                   "~/Content/style/slick-theme.css",
         new CssRewriteUrlTransform()
@@ -65,6 +70,11 @@ namespace WebAplication
 
             bundles.Add(new StyleBundle("~/Content/checkout.css").Include(
                      "~/Content/style/checkout.css",
+           new CssRewriteUrlTransform()
+               ));
+
+            bundles.Add(new StyleBundle("~/Content/select2.min.css").Include(
+                     "~/Content/style/select2.min.css",
            new CssRewriteUrlTransform()
                ));
 
