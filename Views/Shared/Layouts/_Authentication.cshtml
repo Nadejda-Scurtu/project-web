@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="icon" href="~/Content/images/favicon.ico">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap"
+          rel="stylesheet" />
+
+
+    <title>Sign in</title>
+    @Styles.Render("~/Content/bootstrap.min.css")
+    @Styles.Render("~/Content/main.css")
+    @Styles.Render("~/Content/util.css")
+
+    @if (IsSectionDefined("Styled"))
+    {@RenderSection("Styles", required: false)}
+
+</head>
+<body>
+    <div>
+        @RenderBody()
+
+        @Scripts.Render("~/Scripts/scr/bootstrap.min.js")
+        @Scripts.Render("~/Scripts/scr/main.js")
+
+
+        @RenderSection("bootstrap.min", required: false)
+        @RenderSection("main", required: false)
+
+    </div>
+</body>
+</html>

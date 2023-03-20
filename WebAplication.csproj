@@ -125,12 +125,17 @@
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MenController.cs" />
+    <Compile Include="Controllers\NewArrivalsController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
+    <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\ViewCartController.cs" />
+    <Compile Include="Controllers\WomenController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -142,12 +147,6 @@
     <Content Include="Content\images\banner-01.jpg" />
     <Content Include="Content\images\banner-02.jpg" />
     <Content Include="Content\images\banner-03.jpg" />
-    <Content Include="Content\images\banner-04.jpg" />
-    <Content Include="Content\images\banner-05.jpg" />
-    <Content Include="Content\images\banner-06.jpg" />
-    <Content Include="Content\images\banner-07.jpg" />
-    <Content Include="Content\images\banner-08.jpg" />
-    <Content Include="Content\images\banner-09.jpg" />
     <Content Include="Content\images\bg-01.jpg" />
     <Content Include="Content\images\bg-02.jpg" />
     <Content Include="Content\images\bg_01.jpg" />
@@ -168,6 +167,9 @@
     <Content Include="Content\images\gallery-07.jpg" />
     <Content Include="Content\images\gallery-08.jpg" />
     <Content Include="Content\images\gallery-09.jpg" />
+    <Content Include="Content\images\home-image_01.jpg" />
+    <Content Include="Content\images\home-image_02.jpg" />
+    <Content Include="Content\images\home-image_03.jpg" />
     <Content Include="Content\images\icon-close.png" />
     <Content Include="Content\images\icon-close2.png" />
     <Content Include="Content\images\icon-email.png" />
@@ -284,7 +286,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Layouts\_Default.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Cart.cshtml" />
@@ -313,6 +315,13 @@
     <Content Include="Views\ProductDetail\Index.cshtml" />
     <Content Include="Views\Checkout\Index.cshtml" />
     <Content Include="Views\ViewCart\Index.cshtml" />
+    <Content Include="Views\NewArrivals\Index.cshtml" />
+    <Content Include="Views\Men\Index.cshtml" />
+    <Content Include="Views\Women\Index.cshtml" />
+    <Content Include="Views\Account\SignIn.cshtml" />
+    <Content Include="Views\Account\SignUp.cshtml" />
+    <Content Include="Views\Shared\Layouts\_Authentication.cshtml" />
+    <Content Include="Views\Sale\Index.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>

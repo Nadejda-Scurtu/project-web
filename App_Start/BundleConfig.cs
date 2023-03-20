@@ -9,13 +9,16 @@ namespace WebAplication
         {
             //Styles
             bundles.Add(
-                new StyleBundle("~/Content/bootstrap.min.css").Include("~/Content/style/bootstrap.min.css", new CssRewriteUrlTransform())
+                new StyleBundle("~/Content/bootstrap.min.css").Include(
+                    "~/Content/style/bootstrap.min.css", new CssRewriteUrlTransform())
             );
             bundles.Add(
-                new StyleBundle("~/Content/font-awesome.css").Include("~/Content/style/font-awesome.css",new CssRewriteUrlTransform())
+                new StyleBundle("~/Content/font-awesome.css").Include(
+                    "~/Content/style/font-awesome.css",new CssRewriteUrlTransform())
             );
             bundles.Add(
-                new StyleBundle("~/Content/font-awesome.min.css").Include("~/Content/style/font-awesome.min.css",new CssRewriteUrlTransform())
+                new StyleBundle("~/Content/font-awesome.min.css").Include(
+                    "~/Content/style/font-awesome.min.css",new CssRewriteUrlTransform())
             );
 
             bundles.Add(new StyleBundle("~/Content/hamburgers.min.css").Include(

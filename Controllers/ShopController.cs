@@ -14,7 +14,7 @@ namespace WebAplication.Controllers
         {
             List<Product> products = new List<Product>();
 
-            // Add some sample products to the list
+            // Add products to the list
             products.Add(new Product
             {
                 ProductId = 1,
