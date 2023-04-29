@@ -241,6 +241,8 @@
     <Content Include="Content\style\magnific-popup.css" />
     <Content Include="Content\style\main.css" />
     <Content Include="Content\style\material-design-iconic-font.min.css" />
+    <Content Include="Content\style\new_arrivals_scroll.css" />
+    <Content Include="Content\style\sale_scroll.css" />
     <Content Include="Content\style\select2.min.css" />
     <Content Include="Content\style\slick-theme.css" />
     <Content Include="Content\style\slick.css" />

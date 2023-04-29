@@ -1,0 +1,59 @@
+﻿.sale_scroll_section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.sale_scroll_section .sale_scroll
+{
+    width: 100%;
+    display: flex;
+    background: #fc8282;
+    padding: 0.75em;
+}
+
+.sale_scroll_section .sale_scroll div{
+    color: white;
+    font-size: 1.5em;
+    white-space: nowrap;
+    font-weight: 900;
+    text-transform: uppercase;
+    animation: scroll_1 60s linear infinite;
+    animation-delay: -60s;
+}
+
+.sale_scroll_section .sale_scroll div:nth-child(2){
+    animation: scroll_2 60s linear infinite;
+    animation-delay: -30s;
+}
+
+.for_him_btn, .for_her_btn {
+    margin: auto;
+    max-width: 170px;
+}
+
+/*sale_scroll_section .sale_scroll div span {
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+}*/
+@keyframes scroll_1 {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%)
+    }
+}
+
+@keyframes scroll_2 {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-200%)
+    }
+}
