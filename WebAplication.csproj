@@ -273,7 +273,6 @@
     <Content Include="Scripts\scr\jquery-ui.min.js" />
     <Content Include="Scripts\scr\jquery.magnific-popup.min.js" />
     <Content Include="Scripts\scr\main.js" />
-    <Content Include="Scripts\scr\popper.min.js" />
     <Content Include="Scripts\scr\select2.min.js" />
     <Content Include="Scripts\scr\slick-custom.js" />
     <Content Include="Scripts\scr\slick.js" />
@@ -325,6 +324,16 @@
     <Content Include="Views\Shared\Layouts\_Authentication.cshtml" />
     <Content Include="Views\Sale\Index.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="eUseControl.BusinessLogic\eUseControl.BusinessLogic.csproj">
+      <Project>{6ceb5430-1575-46ec-bfba-df2c0084e6bb}</Project>
+      <Name>eUseControl.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="eUseControl.Domain\eUseControl.Domain.csproj">
+      <Project>{9bd59787-f7f1-4a9f-8fa3-8ded5324a390}</Project>
+      <Name>eUseControl.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
