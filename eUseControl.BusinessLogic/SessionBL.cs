@@ -15,13 +15,11 @@ namespace eUseControl.BusinessLogic
     {
         public ULoginResp UserLogin(ULoginData data)
         {
-            //return UserLoginAction(data);
-            throw new NotImplementedException();
+            return UserLoginAction(data);
         }
         public URegisterResp UserRegister(URegisterData data)
         {
-            //return UserRegisterAction(data);
-            throw new NotImplementedException();
+            return UserRegisterAction(data);
         }
     }
 }
