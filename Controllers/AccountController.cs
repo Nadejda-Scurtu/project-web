@@ -11,13 +11,13 @@ namespace WebAplication.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly ISession _session;
-
-        public AccountController()
-        {
-            var bl = new BussinesLogic();
-            _session = bl.GetSessionBL();
-        }
+        //private readonly ISession _session;
+        //
+        //public AccountController()
+        //{
+        //    var bl = new BussinesLogic();
+        //    _session = bl.GetSessionBL();
+        //}
 
         // GET: Account
         public ActionResult SignIn()

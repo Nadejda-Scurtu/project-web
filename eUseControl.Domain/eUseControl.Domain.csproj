@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\ResActionStatus\ActionStatus.cs" />
-    <Compile Include="Entities\User\ULoginData.cs" />
+    <Compile Include="Entities\User\Login\ULoginData.cs" />
+    <Compile Include="Entities\User\Login\ULoginResp.cs" />
+    <Compile Include="Entities\User\Register\URegisterData.cs" />
+    <Compile Include="Entities\User\Register\URegisterResp.cs" />
+    <Compile Include="Enums\URole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,7 +55,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Enums\" />
+    <Folder Include="Entities\Admin\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

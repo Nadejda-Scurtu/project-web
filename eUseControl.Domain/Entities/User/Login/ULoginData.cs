@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eUseControl.Domain.Entities.User
+namespace eUseControl.Domain.Entities.User.Login
 {
     public class ULoginData
     {
-        public string Credential { get; set; }
+        public string Email { get; set; }
         public string Password { get; set; }
         public string LoginIP { get; set; }
         public DateTime LoginDateTime { get; set; }

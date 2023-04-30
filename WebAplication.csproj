@@ -125,6 +125,7 @@
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MenController.cs" />
     <Compile Include="Controllers\NewArrivalsController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
@@ -137,6 +138,7 @@
     </Compile>
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -273,6 +275,7 @@
     <Content Include="Scripts\scr\jquery-ui.min.js" />
     <Content Include="Scripts\scr\jquery.magnific-popup.min.js" />
     <Content Include="Scripts\scr\main.js" />
+    <Content Include="Scripts\scr\popper.min.js" />
     <Content Include="Scripts\scr\select2.min.js" />
     <Content Include="Scripts\scr\slick-custom.js" />
     <Content Include="Scripts\scr\slick.js" />
@@ -294,6 +297,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fonts\Material-Design-Iconic-Font.ttf" />

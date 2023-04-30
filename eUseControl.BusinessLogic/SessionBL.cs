@@ -1,7 +1,8 @@
 ﻿using eUseControl.BusinessLogic.Core;
 using eUseControl.BusinessLogic.Interfaces;
-using eUseControl.Domain.Entities.ResActionStatus;
 using eUseControl.Domain.Entities.User;
+using eUseControl.Domain.Entities.User.Login;
+using eUseControl.Domain.Entities.User.Register;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,15 @@ namespace eUseControl.BusinessLogic
 {
     public class SessionBL : UserApi, ISession
     {
-        //public ActionStatus UserLogin(ULoginData data)
-        //{
-        //    return UserLogData(data);
-        //}
+        public ULoginResp UserLogin(ULoginData data)
+        {
+            //return UserLoginAction(data);
+            throw new NotImplementedException();
+        }
+        public URegisterResp UserRegister(URegisterData data)
+        {
+            //return UserRegisterAction(data);
+            throw new NotImplementedException();
+        }
     }
 }

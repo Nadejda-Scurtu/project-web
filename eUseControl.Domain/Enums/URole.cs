@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eUseControl.BusinessLogic.Core
+namespace eUseControl.Domain.Enums
 {
-    public class AdminApi
+    public enum URole
     {
+        Guest, Customer, Admin // User roles
     }
 }

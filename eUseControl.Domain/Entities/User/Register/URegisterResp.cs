@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eUseControl.Domain.Entities.ResActionStatus
+namespace eUseControl.Domain.Entities.User.Register
 {
-    public class ActionStatus
+    public class URegisterResp
     {
         public bool Status { get; set; }
-        public bool StatusMsg { get; set; }
+        public string StatusMsg { get; set; }
     }
 }
