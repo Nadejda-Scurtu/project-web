@@ -124,6 +124,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\FavouritesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MenController.cs" />
@@ -144,6 +145,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\586x725.png" />
+    <Content Include="Content\images\80x100.png" />
     <Content Include="Content\images\about-01.jpg" />
     <Content Include="Content\images\about-02.jpg" />
     <Content Include="Content\images\about_01.jpg" />
@@ -331,6 +334,7 @@
     <Content Include="Views\Shared\Layouts\_Authentication.cshtml" />
     <Content Include="Views\Sale\Index.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Favourites\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="eUseControl.BusinessLogic\eUseControl.BusinessLogic.csproj">
