@@ -125,10 +125,13 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\FavouritesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MenController.cs" />
     <Compile Include="Controllers\NewArrivalsController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\ViewCartController.cs" />
@@ -138,9 +141,13 @@
     </Compile>
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\UserLogin.cs" />
+    <Compile Include="Models\UserRegister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\586x725.png" />
+    <Content Include="Content\images\80x100.png" />
     <Content Include="Content\images\about-01.jpg" />
     <Content Include="Content\images\about-02.jpg" />
     <Content Include="Content\images\about_01.jpg" />
@@ -244,6 +251,8 @@
     <Content Include="Content\style\main.css" />
     <Content Include="Content\style\material-design-iconic-font.min.css" />
     <Content Include="Content\style\paper-dashboard.css" />
+    <Content Include="Content\style\new_arrivals_scroll.css" />
+    <Content Include="Content\style\sale_scroll.css" />
     <Content Include="Content\style\select2.min.css" />
     <Content Include="Content\style\slick-theme.css" />
     <Content Include="Content\style\slick.css" />
@@ -303,6 +312,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Login\" />
+    <Folder Include="Views\Register\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fonts\Material-Design-Iconic-Font.ttf" />
@@ -337,6 +348,17 @@
     <Content Include="Views\Shared\Layouts\_Authentication.cshtml" />
     <Content Include="Views\Sale\Index.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Favourites\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="eUseControl.BusinessLogic\eUseControl.BusinessLogic.csproj">
+      <Project>{6ceb5430-1575-46ec-bfba-df2c0084e6bb}</Project>
+      <Name>eUseControl.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="eUseControl.Domain\eUseControl.Domain.csproj">
+      <Project>{9bd59787-f7f1-4a9f-8fa3-8ded5324a390}</Project>
+      <Name>eUseControl.Domain</Name>
+    </ProjectReference>
     <Content Include="Views\Shared\AdminLayouts\_SideBar.cshtml" />
     <Content Include="Views\Shared\AdminLayouts\_Navbar.cshtml" />
     <Content Include="Views\Admin\Dashboard.cshtml" />

@@ -92,6 +92,16 @@ namespace WebAplication
           new CssRewriteUrlTransform()
               ));
 
+            bundles.Add(new StyleBundle("~/Content/sale_scroll.css").Include(
+                "~/Content/style/sale_scroll.css",
+                new CssRewriteUrlTransform()
+                ));
+
+            bundles.Add(new StyleBundle("~/Content/new_arrivals_scroll.css").Include(
+                "~/Content/style/new_arrivals_scroll.css",
+                new CssRewriteUrlTransform()
+                ));
+
             //Scripts
 
             bundles.Add(new Bundle("~/Scripts/bootstrap.min.js").Include(
