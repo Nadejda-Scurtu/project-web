@@ -122,6 +122,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -234,6 +235,7 @@
     <Content Include="Content\style\animsition.min.css" />
     <Content Include="Content\style\bootstrap.min.css" />
     <Content Include="Content\style\checkout.css" />
+    <Content Include="Content\style\demo.css" />
     <Content Include="Content\style\font-awesome.css" />
     <Content Include="Content\style\hamburgers.min.css" />
     <Content Include="Content\style\icon-font.min.css" />
@@ -241,6 +243,7 @@
     <Content Include="Content\style\magnific-popup.css" />
     <Content Include="Content\style\main.css" />
     <Content Include="Content\style\material-design-iconic-font.min.css" />
+    <Content Include="Content\style\paper-dashboard.css" />
     <Content Include="Content\style\select2.min.css" />
     <Content Include="Content\style\slick-theme.css" />
     <Content Include="Content\style\slick.css" />
@@ -265,12 +268,19 @@
     <Content Include="Content\fonts\Poppins\Poppins-Thin.ttf" />
     <Content Include="Content\fonts\Poppins\Poppins-ThinItalic.ttf" />
     <Content Include="Scripts\scr\animsition.min.js" />
+    <Content Include="Scripts\scr\bootstrap-notify.js" />
     <Content Include="Scripts\scr\bootstrap.min.js" />
+    <Content Include="Scripts\scr\chartjs.min.js" />
+    <Content Include="Scripts\scr\demo.js" />
+    <Content Include="Scripts\scr\dropzone.js" />
     <Content Include="Scripts\scr\isotope.pkgd.min.js" />
     <Content Include="Scripts\scr\jquery-3.2.1.min.js" />
     <Content Include="Scripts\scr\jquery-ui.min.js" />
     <Content Include="Scripts\scr\jquery.magnific-popup.min.js" />
+    <Content Include="Scripts\scr\jquery.min.js" />
     <Content Include="Scripts\scr\main.js" />
+    <Content Include="Scripts\scr\paper-dashboard.min.js" />
+    <Content Include="Scripts\scr\perfect-scrollbar.jquery.min.js" />
     <Content Include="Scripts\scr\popper.min.js" />
     <Content Include="Scripts\scr\select2.min.js" />
     <Content Include="Scripts\scr\slick-custom.js" />
@@ -306,6 +316,10 @@
     <Content Include="Content\style\fonts\slick.ttf" />
     <Content Include="Content\style\fonts\slick.woff" />
     <None Include=".gitignore" />
+    <Content Include="Content\fonts\nucleo-icons.eot" />
+    <Content Include="Content\fonts\nucleo-icons.ttf" />
+    <Content Include="Content\fonts\nucleo-icons.woff" />
+    <Content Include="Content\fonts\nucleo-icons.woff2" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_BackToTop.cshtml" />
@@ -323,6 +337,16 @@
     <Content Include="Views\Shared\Layouts\_Authentication.cshtml" />
     <Content Include="Views\Sale\Index.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Shared\AdminLayouts\_SideBar.cshtml" />
+    <Content Include="Views\Shared\AdminLayouts\_Navbar.cshtml" />
+    <Content Include="Views\Admin\Dashboard.cshtml" />
+    <Content Include="Views\Shared\Layouts\_Admin.cshtml" />
+    <Content Include="Views\Shared\AdminLayouts\_Footer.cshtml" />
+    <Content Include="Views\Admin\Notifications.cshtml" />
+    <Content Include="Views\Admin\UserProfile.cshtml" />
+    <Content Include="Views\Admin\Orders.cshtml" />
+    <Content Include="Views\Admin\AddProduct.cshtml" />
+    <Content Include="Views\Admin\EditProduct.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

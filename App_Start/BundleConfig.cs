@@ -1,4 +1,5 @@
 ﻿using System.Web;
+using System.Web.Helpers;
 using System.Web.Optimization;
 
 namespace WebAplication
@@ -81,6 +82,16 @@ namespace WebAplication
            new CssRewriteUrlTransform()
                ));
 
+            bundles.Add(new StyleBundle("~/Content/demo.css").Include(
+                     "~/Content/style/demo.css",
+           new CssRewriteUrlTransform()
+               ));
+
+            bundles.Add(new StyleBundle("~/Content/paper-dashboard.css").Include(
+                    "~/Content/style/paper-dashboard.css",
+          new CssRewriteUrlTransform()
+              ));
+
             //Scripts
 
             bundles.Add(new Bundle("~/Scripts/bootstrap.min.js").Include(
@@ -112,6 +123,27 @@ namespace WebAplication
 
             bundles.Add(new Bundle("~/Scripts/sweetalert.min.js").Include(
                    "~/Scripts/scr/sweetalert.min.js"));
+
+            bundles.Add(new Bundle("~/Scripts/jquery.min.js").Include(
+                   "~/Scripts/scr/jquery.min.js"));
+
+            bundles.Add(new Bundle("~/Scripts/paper-dashboard.min.js").Include(
+                   "~/Scripts/scr/paper-dashboard.min.js"));
+           
+            bundles.Add(new Bundle("~/Scripts/chartjs.min.js").Include(
+                   "~/Scripts/scr/chartjs.min.js"));
+
+            bundles.Add(new Bundle("~/Scripts/bootstrap-notify.js").Include(
+                   "~/Scripts/scr/bootstrap-notify.js"));
+
+            bundles.Add(new Bundle("~/Scripts/perfect-scrollbar.jquery.min.js").Include(
+                   "~/Scripts/scr/perfect-scrollbar.jquery.min.js"));
+
+            bundles.Add(new Bundle("~/Scripts/dropzone.js").Include(
+                   "~/Scripts/scr/dropzone.js"));
+
+            bundles.Add(new Bundle("~/Scripts/demo.js").Include(
+                    "~/Scripts/scr/demo.js"));
         }
     }
 }
