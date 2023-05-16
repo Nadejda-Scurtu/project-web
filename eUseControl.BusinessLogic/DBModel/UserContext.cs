@@ -1,19 +1,14 @@
-﻿using eUseControl.Domain.Entities.User;
-using System;
-using System.Collections.Generic;
+﻿using eUseControl.Domain.Entities;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace eUseControl.BusinessLogic.DBModel
 {
     public class UserContext : DbContext
     {
-        public UserContext() : base("name = WebAplication") 
-        {
-        
-        }
-        public virtual DbSet<UsersDbTable> Users { get; set; }
+        public UserContext() 
+            : base("name=WebApplication") { }
+
+        public DbSet<User> Users { get; set; }
+        public DbSet<Session> Sessions { get; set; }
     }
 }
