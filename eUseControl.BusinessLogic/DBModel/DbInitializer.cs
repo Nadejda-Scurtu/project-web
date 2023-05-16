@@ -1,4 +1,5 @@
 ﻿using eUseControl.Domain.Entities;
+using eUseControl.Domain.Enums;
 using eUseControl.Helpers;
 using System.Data.Entity;
 
@@ -13,7 +14,8 @@ namespace eUseControl.BusinessLogic.DBModel
                 Name = "Test",
                 Surname = "TestTest",
                 Email = "test@test.com",
-                PasswordHash = AuthHelper.GeneratePasswordHash("testtest")
+                PasswordHash = AuthHelper.GeneratePasswordHash("testtest"),
+                Level = URole.Admin
             });
 
             context.Users.Add(new User

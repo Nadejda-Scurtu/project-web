@@ -237,6 +237,35 @@
     <Content Include="Content\style\slick.css" />
     <Content Include="Content\style\util.css" />
     <Content Include="Global.asax" />
+    <None Include="Scripts\jquery-3.6.4.intellisense.js" />
+    <Content Include="Scripts\jquery-3.6.4.js" />
+    <Content Include="Scripts\jquery-3.6.4.min.js" />
+    <Content Include="Scripts\jquery-3.6.4.slim.js" />
+    <Content Include="Scripts\jquery-3.6.4.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\scr\animsition.min.js" />
+    <Content Include="Scripts\scr\bootstrap-notify.js" />
+    <Content Include="Scripts\scr\bootstrap.min.js" />
+    <Content Include="Scripts\scr\chartjs.min.js" />
+    <Content Include="Scripts\scr\demo.js" />
+    <Content Include="Scripts\scr\dropzone.js" />
+    <Content Include="Scripts\scr\isotope.pkgd.min.js" />
+    <Content Include="Scripts\scr\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\scr\jquery-ui.min.js" />
+    <Content Include="Scripts\scr\jquery.magnific-popup.min.js" />
+    <Content Include="Scripts\scr\jquery.min.js" />
+    <Content Include="Scripts\scr\main.js" />
+    <Content Include="Scripts\scr\paper-dashboard.min.js" />
+    <Content Include="Scripts\scr\perfect-scrollbar.jquery.min.js" />
+    <Content Include="Scripts\scr\popper.min.js" />
+    <Content Include="Scripts\scr\select2.min.js" />
+    <Content Include="Scripts\scr\slick-custom.js" />
+    <Content Include="Scripts\scr\slick.js" />
+    <Content Include="Scripts\scr\sweetalert.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -245,6 +274,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseBlogController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -263,7 +293,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\UserLoginForm.cs" />
     <Compile Include="Models\UserRegister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -314,10 +343,6 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\Home\_PostCard.cshtml" />
-    <Content Include="Views\Home\_PostPrimary.cshtml" />
-    <Content Include="Views\Home\_PostSecondary.cshtml" />
-    <Content Include="Views\Home\_Category.cshtml" />
     <Content Include="Views\Post\_CommentEditor.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\SignIn.cshtml" />
@@ -333,6 +358,23 @@
     <Content Include="Views\Shop\Index.cshtml" />
     <Content Include="Views\ViewCart\Index.cshtml" />
     <Content Include="Views\Women\Index.cshtml" />
+    <Content Include="Views\Admin\AddProduct.cshtml" />
+    <Content Include="Views\Admin\Dashboard.cshtml" />
+    <Content Include="Views\Admin\EditProduct.cshtml" />
+    <Content Include="Views\Admin\Notifications.cshtml" />
+    <Content Include="Views\Admin\Orders.cshtml" />
+    <Content Include="Views\Admin\UserProfile.cshtml" />
+    <Content Include="Views\Shared\_Error.cshtml" />
+    <Content Include="Views\Shared\_Cart.cshtml" />
+    <Content Include="Views\Shared\_BackToTop.cshtml" />
+    <Content Include="Views\Shared\Layouts\_Admin.cshtml" />
+    <Content Include="Views\Shared\Layouts\_Authentication.cshtml" />
+    <Content Include="Views\Shared\Layouts\_Default.cshtml" />
+    <Content Include="Views\Shared\AdminLayouts\_Footer.cshtml" />
+    <Content Include="Views\Shared\AdminLayouts\_Navbar.cshtml" />
+    <Content Include="Views\Shared\AdminLayouts\_SideBar.cshtml" />
+    <Content Include="Scripts\jquery-3.6.4.min.map" />
+    <Content Include="Scripts\jquery-3.6.4.slim.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -28,10 +28,16 @@
 
                 @if (Session.IsUserLoggedIn())
                 {
+                    if(Session.UserHasRole(eUseControl.Domain.Enums.URole.Admin))
+                    {
+                        @Html.ActionLink("Admin", "Dashboard", "Admin", new { }, new { @class = "flex-c-m trans-04 p-lr-25" })
+                    }
+
                     <a class="flex-c-m trans-04 p-lr-25">
                         @Session.GetUser().Name
                         @Session.GetUser().Surname
                     </a>
+
                     @Html.ActionLink("Logout", "Logout", "Account", new { }, new { @class = "flex-c-m trans-04 p-lr-25" })
                 }
                 else

@@ -1,6 +1,5 @@
 ﻿using eUseControl.BusinessLogic.Services;
 using eUseControl.Web.Extensions;
-using System.Linq;
 using System.Web.Mvc;
 
 namespace eUseControl.Controllers
@@ -16,8 +15,6 @@ namespace eUseControl.Controllers
 			var sessionCookie = Request.Cookies[SESSION_COOKIE_NAME];
 			if (sessionCookie == null)
 				return;
-
-			var userTest = Session.GetUser();
 
 			var token = sessionCookie.Value;
 			var sessionResp = SessionService.GetByToken(token);

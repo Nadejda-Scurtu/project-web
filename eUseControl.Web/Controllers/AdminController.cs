@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using eUseControl.BusinessLogic.Services;
+using eUseControl.Domain.Entities;
 using System.Web.Mvc;
 
 namespace WebAplication.Controllers
@@ -29,6 +27,24 @@ namespace WebAplication.Controllers
         public ActionResult AddProduct()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddProduct([Bind(Exclude = "Id")] Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                var resp = ProductService.Add(product);
+                if (resp.Success)
+                {
+                    return RedirectToAction("Dashboard");
+                }
+
+                ModelState.AddModelError("", resp.Message);
+            }
+
+            return View(product);
         }
 
         public ActionResult EditProduct()

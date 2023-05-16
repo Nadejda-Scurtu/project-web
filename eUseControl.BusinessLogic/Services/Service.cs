@@ -4,7 +4,7 @@ namespace eUseControl.BusinessLogic.Services
 {
     public abstract class BaseService
     {
-        public static UserContext DbContext = new UserContext();
+        internal static UserContext DbContext = new UserContext();
 
         public static ServiceResponse<T> Success<T>(T entry = default)
         {
