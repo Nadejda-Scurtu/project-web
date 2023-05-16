@@ -6,7 +6,7 @@ using System.Web;
 
 namespace WebAplication.Models
 {
-    public class UserRegister
+    public class UserRegisterForm
     {
         // UserName
         [
@@ -43,6 +43,16 @@ namespace WebAplication.Models
             DataType(DataType.Password)
         ]
         public string Password { get; set; }
+
+        [
+            Display(Name = "Password"),
+            Required(ErrorMessage = "This field is required."),
+            MinLength(8, ErrorMessage = "Password must be more than 8 characters."),
+            MaxLength(50, ErrorMessage = "Maximum surname length 50 characters."),
+            Compare("Password", ErrorMessage = "Confirm password doesn't match, Type again !"),
+            DataType(DataType.Password)
+        ]
+        public string ConfirmPassword { get; set; }
 
     }
 }

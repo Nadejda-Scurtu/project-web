@@ -1,10 +1,10 @@
-﻿using System.Web;
-using System;
-using System.Web.Mvc;
-using WebAplication.Models;
-using eUseControl.BusinessLogic.Services;
+﻿using eUseControl.BusinessLogic.Services;
 using eUseControl.Controllers;
 using eUseControl.Web.Extensions;
+using System;
+using System.Web;
+using System.Web.Mvc;
+using WebAplication.Models;
 
 namespace WebAplication.Controllers
 {
@@ -16,7 +16,6 @@ namespace WebAplication.Controllers
             return View();
         }
 
-        // POST /Auth/Login
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult SignIn(UserLoginForm form)
@@ -53,6 +52,40 @@ namespace WebAplication.Controllers
         public ActionResult SignUp()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SignUp(UserRegisterForm form)
+        {
+            if (ModelState.IsValid)
+            {
+                var data = new AccountService.RegisterData()
+                {
+                    Name = form.Name,
+                    Surname = form.Surname,
+                    Email = form.Email,
+                    Password = form.Password,
+                    IpAddress = Request.UserHostAddress,
+                    Time = DateTime.Now
+                };
+
+                var resp = AccountService.Register(data);
+                if (!resp.Success)
+                {
+                    ModelState.AddModelError("", resp.Message);
+                    return View(form);
+                }
+
+                return SignIn(new UserLoginForm()
+                {
+                    Email = form.Email,
+                    Password = form.Password,
+                    RememberPassword = true
+                });
+            }
+
+            return View(form);
         }
 
         public ActionResult Logout()

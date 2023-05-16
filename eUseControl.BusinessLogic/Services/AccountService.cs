@@ -42,6 +42,7 @@ namespace eUseControl.BusinessLogic.Services
         public struct RegisterData
         {
             public string Name { get; set; }
+            public string Surname { get; set; }
             public string Email { get; set; }
             public string Password { get; set; }
             public string IpAddress { get; set; }
@@ -56,6 +57,7 @@ namespace eUseControl.BusinessLogic.Services
             var user = new User
             {
                 Name = data.Name,
+                Surname = data.Surname,
                 Email = data.Email,
                 PasswordHash = AuthHelper.GeneratePasswordHash(data.Password),
             };
