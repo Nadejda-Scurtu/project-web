@@ -1,70 +1,131 @@
-﻿@{
-    ViewBag.Title = "EditProduct";
+﻿@model eUseControl.Domain.Entities.Product
+
+@{
+    ViewBag.Title = "AddProduct";
     Layout = "~/Views/Shared/Layouts/_Admin.cshtml";
 }
 
 <div class="col-md-10">
     <div class="card card-user">
         <div class="card-header">
-            <h4 class="card-title" style="color: #5466de">Edit Product</h4>
+            @if (Model != null)
+            {
+                <h4 class="card-title" style="color: #5466de">
+                    Edit @Model.ProductName
+                </h4>
+            }
+            else
+            {
+                <h4 class="card-title" style="color: #5466de">
+                    Add New Product
+                </h4>
+            }
         </div>
 
         <div class="card-body">
-            <form>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationMessage("")
+
                 <div class="row">
                     <div class="col-md-6 pr-1">
                         <div class="form-group">
-                            <label>Product name</label>
-                            <input type="text" class="form-control" placeholder="Type here" value="Air Max 90">
+                            @Html.LabelFor(x => x.ProductName)
+                            @Html.TextBoxFor(x => x.ProductName, new
+                            {
+                                @class = "form-control",
+                                placeholder = "Type here"
+                            })
+                            @Html.ValidationMessageFor(x => x.ProductName)
                         </div>
                     </div>
                     <div class="col-md-6 pl-1">
                         <div class="form-group">
-                            <label>Brand name</label>
-                            <input type="text" class="form-control" placeholder="Type here" value="Nike">
+                            @Html.LabelFor(x => x.BrandName)
+                            @Html.TextBoxFor(x => x.BrandName, new
+                            {
+                                @class = "form-control",
+                                placeholder = "Type here"
+                            })
+                            @Html.ValidationMessageFor(x => x.BrandName)
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control textarea">The best trainers 2023</textarea>
+                            @Html.LabelFor(x => x.Description)
+                            @Html.TextAreaFor(x => x.Description, new
+                            {
+                                @class = "form-control",
+                                placeholder = "Type here"
+                            })
+                            @Html.ValidationMessageFor(x => x.Description)
                         </div>
                     </div>
 
-
-
                     <div class="col-md-12">
-                        <div class="form-group">
+                        @if (Model != null)
+                        {
                             <label>Images</label>
-                            <div class="dz dz-clickable" id="my-dropzone">
-                                <div class="dz-message d-flex flex-column">
-                                    <i class="nc-icon nc-cloud-upload-94 text-muted"></i>
-                                    Drag &amp; Drop here or click
-                                </div>
-                            </div>
-                        </div>
+                            <br />
+
+                            for (var i = 0; i < 3; i++)
+                            {
+                                <img src="@Model.GetImageById(i)" width="100" height="100" style="margin-right: 10px" />
+                                @Html.TextBox("Image" + i, "", new
+                                {
+                                    type = "file",
+                                    form = "form_file" + i,
+                                    onchange = "this.form.submit()"
+                                })
+                                <br />
+                                <br />
+                            }
+
+                            <br />
+                        }
+                        else
+                        {
+                            <span>You can add images after you've created a product.</span>
+                        }
                     </div>
 
                     <div class="col-md-4 pr-2">
                         <div class="form-group">
-                            <label>Regular price</label>
-                            <input type="text" class="form-control" placeholder="0.00" value="78">
+                            @Html.LabelFor(x => x.RegularPrice)
+                            @Html.TextBoxFor(x => x.RegularPrice, new
+                            {
+                                @class = "form-control",
+                                placeholder = "0.00",
+                                type = "number",
+                                step = "0.01",
+                                min = "0"
+                            })
+                            @Html.ValidationMessageFor(x => x.RegularPrice)
                         </div>
                     </div>
                     <div class="col-md-4 px-2">
                         <div class="form-group">
-                            <label>Promotional price</label>
-                            <input type="text" class="form-control" placeholder="0.00" value="68">
+                            @Html.LabelFor(x => x.PromotionalPrice)
+                            @Html.TextBoxFor(x => x.PromotionalPrice, new
+                           {
+                               @class = "form-control",
+                               placeholder = "0.00",
+                               type = "number",
+                               step = "0.01",
+                               min = "0"
+                           })
+                            @Html.ValidationMessageFor(x => x.PromotionalPrice)
                         </div>
                     </div>
                     <div class="col-md-4 pl-2">
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Currency</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>USD</option>
-                                <option>EUR</option>
-                                <option>MD</option>
-                            </select>
+                            @Html.LabelFor(x => x.Currency)
+                            @Html.DropDownListFor(x => x.Currency,
+                                new SelectList(Enum.GetValues(typeof(eUseControl.Domain.Enums.CurrencyType))),
+                                new { @class = "form-control" }
+                            )
+                            @Html.ValidationMessageFor(x => x.Currency)
                         </div>
 
                     </div>
@@ -72,37 +133,34 @@
                 <div class="row">
                     <div class="col-md-4 pr-2">
                         <div class="form-group">
-                            <label>Category</label>
-                            <input type="text" class="form-control" placeholder="Enter category" value="shoes">
+                            @Html.LabelFor(x => x.Category)
+                            @Html.TextBoxFor(x => x.Category, new
+                            {
+                                @class = "form-control",
+                                placeholder = "Type here",
+                            })
+                            @Html.ValidationMessageFor(x => x.Category)
                         </div>
                     </div>
                     <div class="col-md-4 px-2">
                         <div class="form-group">
-                            <label>Tags</label>
-                            <input type="text" class="form-control" placeholder="Enter tags" value="men">
+                            @Html.LabelFor(x => x.Tags)
+                            @Html.TextBoxFor(x => x.Tags, new
+                            {
+                                @class = "form-control",
+                                placeholder = "Enter tags",
+                            })
+                            @Html.ValidationMessageFor(x => x.Tags)
                         </div>
                     </div>
                     <div class="col-md-4 pl-2">
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Size</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>XS</option>
-                                <option>S</option>
-                                <option>M</option>
-                                <option>L</option>
-                                <option>XL</option>
-                                <option>35</option>
-                                <option>36</option>
-                                <option>37</option>
-                                <option>38</option>
-                                <option>39</option>
-                                <option>40</option>
-                                <option>41</option>
-                                <option>42</option>
-                                <option>43</option>
-                                <option>44</option>
-                                <option>45</option>
-                            </select>
+                            @Html.LabelFor(x => x.Size)
+                            @Html.DropDownListFor(x => x.Size,
+                                new SelectList(Enum.GetValues(typeof(eUseControl.Domain.Enums.ProductSize))),
+                                new { @class = "form-control" }
+                            )
+                            @Html.ValidationMessageFor(x => x.Size)
                         </div>
 
                     </div>
@@ -113,9 +171,29 @@
                         <button type="submit" class="btn btn-secondary btn-round">Save to draft</button>
                     </div>
                 </div>
-            </form>
+            }
+
+            @if (Model != null)
+            {
+                for (var i = 0; i < 3; i++)
+                {
+                    using (Html.BeginForm(
+                        "EditProductUploadImage",
+                        "Admin",
+                        FormMethod.Post,
+                        new
+                        {
+                            enctype = "multipart/form-data",
+                            id = "form_file" + i
+                        }
+                    ))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.Hidden("ProductId", Model.Id)
+                    }
+                }
+
+            }
         </div>
     </div>
 </div>
-
-

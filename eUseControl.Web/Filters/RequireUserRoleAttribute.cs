@@ -2,7 +2,7 @@
 using eUseControl.Web.Extensions;
 using System.Web.Mvc;
 
-namespace MRSTW.Filters
+namespace eUseControl.Filters
 {
 	public class RequireUserRoleAttribute : ActionFilterAttribute
 	{

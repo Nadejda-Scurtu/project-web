@@ -15,6 +15,6 @@ namespace eUseControl.Domain.Entities
         public DateTime UpdateRegisterDate { get; set; } = DateTime.Now;
         public DateTime LoginDateTime { get; set; } = DateTime.Now;
         public string LoginIP { get; set; }
-
+        public string CartProductIds { get; set; } = ";0;;1;;2;";
     }
 }

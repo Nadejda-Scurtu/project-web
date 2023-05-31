@@ -61,6 +61,7 @@
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -288,6 +289,7 @@
     <Compile Include="Controllers\ViewCartController.cs" />
     <Compile Include="Controllers\WomenController.cs" />
     <Compile Include="Extensions\SessionExtensions.cs" />
+    <Compile Include="Filters\RequireUserLogin.cs" />
     <Compile Include="Filters\RequireUserRoleAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -358,7 +360,6 @@
     <Content Include="Views\Shop\Index.cshtml" />
     <Content Include="Views\ViewCart\Index.cshtml" />
     <Content Include="Views\Women\Index.cshtml" />
-    <Content Include="Views\Admin\AddProduct.cshtml" />
     <Content Include="Views\Admin\Dashboard.cshtml" />
     <Content Include="Views\Admin\EditProduct.cshtml" />
     <Content Include="Views\Admin\Notifications.cshtml" />
@@ -375,6 +376,7 @@
     <Content Include="Views\Shared\AdminLayouts\_SideBar.cshtml" />
     <Content Include="Scripts\jquery-3.6.4.min.map" />
     <Content Include="Scripts\jquery-3.6.4.slim.min.map" />
+    <Content Include="Views\Admin\ListProducts.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

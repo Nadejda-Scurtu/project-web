@@ -1,4 +1,6 @@
 ﻿
+@using eUseControl.Web.Extensions
+
 @{
     ViewBag.Title = "ViewCart";
 }
@@ -31,125 +33,40 @@
                                     <th class="column-5">Total</th>
                                 </tr>
 
-                                <tr class="table_row">
-                                    <td class="column-1">
-                                        <div class="how-itemcart1">
-                                            <img src="~/Content/images/cart_product_01.png" alt="IMG">
-                                        </div>
-                                    </td>
-                                    <td class="column-2">Nike Pegasus 39</td>
-                                    <td class="column-3">$ 77.97</td>
-                                    <td class="column-4">
-                                        <div class="wrap-num-product flex-w m-l-auto m-r-0">
-                                            <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                                <i class="fs-16 zmdi zmdi-minus"></i>
-                                            </div>
+                                @{
+                                    var total = 0f;
+                                    var prodResp = eUseControl.BusinessLogic.Services.UserService.GetProductsInCart(Session.GetUser());
+                                    if (prodResp.Success)
+                                    {
+                                        foreach (var product in prodResp.Entry)
+                                        {
+                                            total += product.RegularPrice;
+                                            <tr class="table_row">
+                                                <td class="column-1">
+                                                    <div class="how-itemcart1">
+                                                        <img src="@product.Image0" alt="IMG">
+                                                    </div>
+                                                </td>
+                                                <td class="column-2">@product.ProductName</td>
+                                                <td class="column-3">$ @product.RegularPrice</td>
+                                                <td class="column-4">
+                                                    <div class="wrap-num-product flex-w m-l-auto m-r-0">
+                                                        <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+                                                            <i class="fs-16 zmdi zmdi-minus"></i>
+                                                        </div>
 
-                                            <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value="1">
+                                                        <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value="1">
 
-                                            <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                                <i class="fs-16 zmdi zmdi-plus"></i>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="column-5">$ 77.97</td>
-                                </tr>
-
-                                <tr class="table_row">
-                                    <td class="column-1">
-                                        <div class="how-itemcart1">
-                                            <img src="~/Content/images/cart_product_02.png" alt="IMG">
-                                        </div>
-                                    </td>
-                                    <td class="column-2">Nike Pegasus Trail 4 GORE-TEX</td>
-                                    <td class="column-3">$ 160.00</td>
-                                    <td class="column-4">
-                                        <div class="wrap-num-product flex-w m-l-auto m-r-0">
-                                            <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                                <i class="fs-16 zmdi zmdi-minus"></i>
-                                            </div>
-
-                                            <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product2" value="1">
-
-                                            <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                                <i class="fs-16 zmdi zmdi-plus"></i>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="column-5">$ 160.00</td>
-                                </tr>
-
-                                <tr class="table_row">
-                                    <td class="column-1">
-                                        <div class="how-itemcart1">
-                                            <img src="~/Content/images/cart_product_03.png" alt="IMG">
-                                        </div>
-                                    </td>
-                                    <td class="column-2">Ultraboost Light Shoes</td>
-                                    <td class="column-3">$ 190.00</td>
-                                    <td class="column-4">
-                                        <div class="wrap-num-product flex-w m-l-auto m-r-0">
-                                            <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                                <i class="fs-16 zmdi zmdi-minus"></i>
-                                            </div>
-
-                                            <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product2" value="1">
-
-                                            <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                                <i class="fs-16 zmdi zmdi-plus"></i>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="column-5">$ 190.00</td>
-                                </tr>
-
-                                <tr class="table_row">
-                                    <td class="column-1">
-                                        <div class="how-itemcart1">
-                                            <img src="~/Content/images/cart_product_04.png" alt="IMG">
-                                        </div>
-                                    </td>
-                                    <td class="column-2">Adidas Rekive Sweat Pants</td>
-                                    <td class="column-3">$ 70.00</td>
-                                    <td class="column-4">
-                                        <div class="wrap-num-product flex-w m-l-auto m-r-0">
-                                            <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                                <i class="fs-16 zmdi zmdi-minus"></i>
-                                            </div>
-
-                                            <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product2" value="1">
-
-                                            <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                                <i class="fs-16 zmdi zmdi-plus"></i>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="column-5">$ 70.00</td>
-                                </tr>
-
-                                <tr class="table_row">
-                                    <td class="column-1">
-                                        <div class="how-itemcart1">
-                                            <img src="~/Content/images/cart_product_05.png" alt="IMG">
-                                        </div>
-                                    </td>
-                                    <td class="column-2">Adidas Rekive Sweat Pants</td>
-                                    <td class="column-3">$ 80.00</td>
-                                    <td class="column-4">
-                                        <div class="wrap-num-product flex-w m-l-auto m-r-0">
-                                            <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                                <i class="fs-16 zmdi zmdi-minus"></i>
-                                            </div>
-
-                                            <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product2" value="1">
-
-                                            <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                                <i class="fs-16 zmdi zmdi-plus"></i>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="column-5">$ 80.00</td>
-                                </tr>
+                                                        <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+                                                            <i class="fs-16 zmdi zmdi-plus"></i>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="column-5">$ @product.RegularPrice</td>
+                                            </tr>
+                                        }
+                                    }
+                                }
 
                             </tbody>
                         </table>
@@ -186,7 +103,7 @@
 
                         <div class="size-209">
                             <span class="mtext-110 cl2">
-                                $ 577.97
+                                $ @total
                             </span>
                         </div>
                     </div>
@@ -251,12 +168,12 @@
 
                         <div class="size-209 p-t-1">
                             <span class="mtext-110 cl2">
-                                $ 577.97
+                                $ @total
                             </span>
                         </div>
                     </div>
 
-                    <div  class="flex-c-m stext-101 cl0 size-116 bor14 p-lr-15 trans-04 pointer">
+                    <div class="flex-c-m stext-101 cl0 size-116 bor14 p-lr-15 trans-04 pointer">
                         <a href="/checkout" class="flex-c-m w-full stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">Proceed to Checkout</a>
                     </div>
                 </div>

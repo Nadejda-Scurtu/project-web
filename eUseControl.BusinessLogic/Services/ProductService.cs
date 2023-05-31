@@ -13,9 +13,27 @@ namespace eUseControl.BusinessLogic.Services
             return Success(product);
         }
 
+        public static ServiceResponse<Product> Edit(Product product)
+        {
+            DbContext.Entry(product).State = System.Data.Entity.EntityState.Modified;
+            DbContext.SaveChanges();
+            return Success(product);
+        }
+
         public static ServiceResponse<List<Product>> GetAll()
         {
-            return Success(DbContext.Products.ToList());
+            var entries = DbContext.Products
+                .ToList();
+
+            return Success(entries);
+        }
+
+        public static ServiceResponse<Product> GetById(int id)
+        {
+            var entry = DbContext.Products
+                .FirstOrDefault(x => x.Id == id);
+
+            return Success(entry);
         }
     }
 }
