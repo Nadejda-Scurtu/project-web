@@ -12,7 +12,8 @@ namespace WebAplication.Controllers
             if (!id.HasValue)
                 return HttpNotFound();
 
-            var prodresp = ProductService.GetById(id.Value);
+            var prodService = new ProductService();
+            var prodresp = prodService.GetById(id.Value);
             if (!prodresp.Success)
                 return HttpNoPermission();
 

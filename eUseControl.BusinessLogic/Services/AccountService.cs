@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace eUseControl.BusinessLogic.Services
 {
-    public abstract class AccountService : BaseService
+    public class AccountService : BaseService
     {
         public struct LoginData
         {
@@ -16,7 +16,7 @@ namespace eUseControl.BusinessLogic.Services
             public DateTime Time { get; set; }
         }
 
-        public static ServiceResponse<Session> Login(LoginData data)
+        public ServiceResponse<Session> Login(LoginData data)
         {
             var passHash = AuthHelper.GeneratePasswordHash(data.Password);
 
@@ -49,7 +49,7 @@ namespace eUseControl.BusinessLogic.Services
             public DateTime Time { get; set; }
         }
 
-        public static ServiceResponse<User> Register(RegisterData data)
+        public ServiceResponse<User> Register(RegisterData data)
         {
             if(DbContext.Users.FirstOrDefault(x => x.Email == data.Email) != null)
                 return Failure<User>("Account with this Email already exists.");

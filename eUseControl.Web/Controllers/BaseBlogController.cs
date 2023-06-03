@@ -16,8 +16,9 @@ namespace eUseControl.Controllers
 			if (sessionCookie == null)
 				return;
 
+			var sessionService = new SessionService();
 			var token = sessionCookie.Value;
-			var sessionResp = SessionService.GetByToken(token);
+			var sessionResp = sessionService.GetByToken(token);
 			if (!sessionResp.Success)
 				return;
 
@@ -25,7 +26,8 @@ namespace eUseControl.Controllers
 			if (session == null)
 				return;
 
-			var userResp = UserService.GetById(session.UserId);
+            var userService = new UserService();
+            var userResp = userService.GetById(session.UserId);
             if (!userResp.Success)
                 return;
 

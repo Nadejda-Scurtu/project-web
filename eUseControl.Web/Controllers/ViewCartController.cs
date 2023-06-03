@@ -22,7 +22,8 @@ namespace WebAplication.Controllers
             if (!product_id.HasValue)
                 return HttpNoPermission();
 
-            var prodResp = ProductService.GetById(product_id.Value);
+            var prodService = new ProductService();
+            var prodResp = prodService.GetById(product_id.Value);
             if (!prodResp.Success)
                 return HttpNoPermission();
 
@@ -31,7 +32,8 @@ namespace WebAplication.Controllers
                 return HttpNotFound();
 
             var user = Session.GetUser();
-            UserService.AddProductToUserCart(user, product);
+            var userService = new UserService();
+            userService.AddProductToUserCart(user, product);
             return Json(new { success = 1 });
         }
 
@@ -42,7 +44,8 @@ namespace WebAplication.Controllers
             if (!product_id.HasValue)
                 return HttpNoPermission();
 
-            var prodResp = ProductService.GetById(product_id.Value);
+            var prodService = new ProductService();
+            var prodResp = prodService.GetById(product_id.Value);
             if (!prodResp.Success)
                 return HttpNoPermission();
 
@@ -51,7 +54,8 @@ namespace WebAplication.Controllers
                 return HttpNotFound();
 
             var user = Session.GetUser();
-            UserService.RemoveProductToUserCart(user, product);
+            var userService = new UserService();
+            userService.RemoveProductToUserCart(user, product);
             return Json(new { success = 1 });
         }
     }

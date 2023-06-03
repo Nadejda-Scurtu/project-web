@@ -8,7 +8,8 @@ namespace WebAplication.Controllers
     {
         public ActionResult Index()
         {
-            var products = ProductService.GetAll();
+            var prodService = new ProductService();
+            var products = prodService.GetAll();
             return View(products.Entry);
         }
     }

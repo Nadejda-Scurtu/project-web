@@ -30,7 +30,8 @@ namespace WebAplication.Controllers
                     Time = DateTime.Now
                 };
 
-                var loginResp = AccountService.Login(data);
+                var accountService = new AccountService();
+                var loginResp = accountService.Login(data);
                 if (loginResp.Success)
                 {
                     var session = loginResp.Entry;
@@ -70,7 +71,8 @@ namespace WebAplication.Controllers
                     Time = DateTime.Now
                 };
 
-                var resp = AccountService.Register(data);
+                var accountService = new AccountService();
+                var resp = accountService.Register(data);
                 if (!resp.Success)
                 {
                     ModelState.AddModelError("", resp.Message);

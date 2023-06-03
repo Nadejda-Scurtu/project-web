@@ -35,7 +35,8 @@
 
                                 @{
                                     var total = 0f;
-                                    var prodResp = eUseControl.BusinessLogic.Services.UserService.GetProductsInCart(Session.GetUser());
+                                    var userService = new eUseControl.BusinessLogic.Services.UserService();
+                                    var prodResp = userService.GetProductsInCart(Session.GetUser());
                                     if (prodResp.Success)
                                     {
                                         foreach (var product in prodResp.Entry)

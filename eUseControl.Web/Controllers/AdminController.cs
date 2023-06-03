@@ -49,7 +49,8 @@ namespace WebAplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                var resp = ProductService.Add(product);
+                var prodService = new ProductService();
+                var resp = prodService.Add(product);
                 if (resp.Success)
                 {
                     return RedirectToAction("ListProducts");
@@ -63,7 +64,8 @@ namespace WebAplication.Controllers
 
         public ActionResult ListProducts()
         {
-            var prodResp = ProductService.GetAll();
+            var prodService = new ProductService();
+            var prodResp = prodService.GetAll();
             if (!prodResp.Success)
                 return HttpNotFound();
 
@@ -72,7 +74,8 @@ namespace WebAplication.Controllers
 
         public ActionResult EditProduct(int id)
         {
-            var prodResp = ProductService.GetById(id);
+            var prodService = new ProductService();
+            var prodResp = prodService.GetById(id);
             if (!prodResp.Success)
                 return HttpNotFound();
 
@@ -86,7 +89,8 @@ namespace WebAplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                var resp = ProductService.Add(product);
+                var prodService = new ProductService();
+                var resp = prodService.Edit(product);
                 if (resp.Success)
                 {
                     return RedirectToAction("ListProducts");
@@ -98,11 +102,44 @@ namespace WebAplication.Controllers
             return View(product);
         }
 
+        public ActionResult DeleteProduct(int id)
+        {
+            var prodService = new ProductService();
+            var prodResp = prodService.GetById(id);
+            if (!prodResp.Success)
+                return HttpNotFound();
+
+            var prod = prodResp.Entry;
+            return View(prod);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ActionName("DeleteProduct")]
+        public ActionResult DeleteProductConfirm(int id)
+        {
+            if (ModelState.IsValid)
+            {
+                var prodService = new ProductService();
+                var prodResp = prodService.GetById(id);
+                if (!prodResp.Success)
+                    return HttpNotFound();
+
+                var product = prodResp.Entry;
+                var resp = prodService.Delete(product);
+
+                ModelState.AddModelError("", resp.Message);
+            }
+
+            return RedirectToAction("ListProducts");
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditProductUploadImage(EditProductUploadForm form)
         {
-            var prodResp = ProductService.GetById(form.ProductId);
+            var prodService = new ProductService();
+            var prodResp = prodService.GetById(form.ProductId);
             if (!prodResp.Success)
                 return HttpNoPermission();
 
@@ -143,7 +180,7 @@ namespace WebAplication.Controllers
                 }
             }
 
-            ProductService.Edit(product);
+            prodService.Edit(product);
             return RedirectToAction("EditProduct", new {id = product.Id});
         }
     }
