@@ -9,15 +9,6 @@ using System.Web.Services.Description;
 
 namespace WebAplication.Controllers
 {
-    public class EditProductUploadForm
-    {
-        public HttpPostedFileBase Image0 { get; set; }
-        public HttpPostedFileBase Image1 { get; set; }
-        public HttpPostedFileBase Image2 { get; set; }
-        public int ProductId { get; set; }
-    }
-
-
     public class AdminController : eUseBaseController
     {
         // GET: Admin
@@ -52,14 +43,12 @@ namespace WebAplication.Controllers
                 var prodService = new ProductService();
                 var resp = prodService.Add(product);
                 if (resp.Success)
-                {
                     return RedirectToAction("ListProducts");
-                }
 
                 ModelState.AddModelError("", resp.Message);
             }
 
-            return View(product);
+            return View("EditProduct", product);
         }
 
         public ActionResult ListProducts()
@@ -132,56 +121,5 @@ namespace WebAplication.Controllers
             }
 
             return RedirectToAction("ListProducts");
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult EditProductUploadImage(EditProductUploadForm form)
-        {
-            var prodService = new ProductService();
-            var prodResp = prodService.GetById(form.ProductId);
-            if (!prodResp.Success)
-                return HttpNoPermission();
-
-            var product = prodResp.Entry;
-            if (product == null)
-                return HttpNotFound();
-
-            for (var i = 0; i < 3; i++)
-            {
-                HttpPostedFileBase file = null;
-
-                switch(i)
-                {
-                    case 0:
-                        file = form.Image0; break;
-                    case 1:
-                        file = form.Image1; break;
-                    case 2:
-                        file = form.Image2; break;
-                }
-
-                if (file == null)
-                    continue;
-
-                byte[] bytes = new byte[file.ContentLength];
-                using (BinaryReader theReader = new BinaryReader(file.InputStream))
-                {
-                    bytes = theReader.ReadBytes(file.ContentLength);
-                }
-                string base64 = Convert.ToBase64String(bytes);
-                var image = $"data:{file.ContentType};base64,{base64}";
-
-                switch (i)
-                {
-                    case 0: product.Image0 = image; break;
-                    case 1: product.Image1 = image; break;
-                    case 2: product.Image2 = image; break;
-                }
-            }
-
-            prodService.Edit(product);
-            return RedirectToAction("EditProduct", new {id = product.Id});
-        }
     }
 }
