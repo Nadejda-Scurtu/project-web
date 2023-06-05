@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "Notifications";
+    Layout = "~/Views/Shared/Layouts/_Admin.cshtml";
+}
+
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" style="color: #5466de">Notifications</h4>
+    
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 ">
+                            <div class="card card-plain">
+                                <div class="card-header">
+                                    <h5 class="card-title">Order status notifications </h5>
+                                </div>
+                                <div class="card-body">
+
+                                    <div class="alert alert-info alert-dismissible fade show">
+                                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                            <i class="nc-icon nc-simple-remove"></i>
+                                        </button>
+                                        <span>The order #ID:0901 was successfully delivered to the customer </span>
+                                    </div>
+                                    <div class="alert alert-info alert-with-icon alert-dismissible fade show" data-notify="container">
+                                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                            <i class="nc-icon nc-simple-remove"></i>
+                                        </button>
+                                        <span data-notify="icon" class="nc-icon nc-bell-55"></span>
+                                        <span data-notify="message">New Order #ID:0901 from 10.01.2021</span>
+                                    </div>
+                                    <div class="alert alert-info alert-dismissible fade show">
+                                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                            <i class="nc-icon nc-simple-remove"></i>
+                                        </button>
+                                        <span>The order #ID:0504 was successfully delivered to the customer </span>
+                                    </div>
+                                    <div class="alert alert-info alert-with-icon alert-dismissible fade show" data-notify="container">
+                                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                            <i class="nc-icon nc-simple-remove"></i>
+                                        </button>
+                                        <span data-notify="icon" class="nc-icon nc-bell-55"></span>
+                                        <span data-notify="message">New Order #ID:0504 from 02.01.2021</span>
+                                    </div>
+
+
+                                </div>
+                                </div>
+                            </div>
+                     
+                        <div class="col-md-6 ">
+                            <div class="card card-plain">
+                                <div class="card-header">
+                                    <h5 class="card-title">Manager job</h5>
+                                </div>
+                                <div class="card-body">
+                                  
+                                    <div class="alert alert-success alert-dismissible fade show">
+                                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                            <i class="nc-icon nc-simple-remove"></i>
+                                        </button>
+                                        <span>The manager successfully processed the order </span>
+                                    </div>
+                                    <div class="alert alert-warning alert-dismissible fade show">
+                                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                            <i class="nc-icon nc-simple-remove"></i>
+                                        </button>
+                                        <span> The manager made a mistake in processing</span>
+                                    </div>
+                                    <div class="alert alert-danger alert-dismissible fade show">
+                                        <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                            <i class="nc-icon nc-simple-remove"></i>
+                                        </button>
+                                        <span> The manager canceled the order ID#0231 </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div>
