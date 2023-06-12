@@ -121,5 +121,6 @@ namespace WebAplication.Controllers
             }
 
             return RedirectToAction("ListProducts");
+        }
     }
 }
