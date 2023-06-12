@@ -28,6 +28,5 @@ namespace eUseControl.Domain.Entities
 
         [Required]
         public URole AccessLevel { get; set; }
-
     }
 }
