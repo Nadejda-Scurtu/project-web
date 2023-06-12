@@ -1,0 +1,90 @@
+﻿@using eUseControl.Web.Extensions
+
+<div class="wrap-header-cart js-panel-cart">
+    <div class="s-full js-hide-cart"></div>
+
+    <div class="header-cart flex-col-l p-l-65 p-r-25">
+        <div class="header-cart-title flex-w flex-sb-m p-b-8">
+            <span class="mtext-103 cl2">
+                Your Cart
+            </span>
+
+            <div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+                <i class="zmdi zmdi-close"></i>
+            </div>
+        </div>
+        @if (Session.IsUserLoggedIn())
+        {
+            <script>
+                function DeleteFromCart(id) {
+
+                    fetch("/ViewCart/RemoveProduct", {
+                        body: JSON.stringify({ product_id: id }),
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    })
+                        .then(r => {
+                            document.location = document.location;
+                        })
+                }
+            </script>
+
+            var totalPrice = 0f;
+            <div class="header-cart-content flex-w js-pscroll">
+                <ul class="header-cart-wrapitem w-full">
+
+
+                    @{
+                        var userService = new eUseControl.BusinessLogic.Services.UserService();
+                        var prodResp = userService.GetProductsInCart(Session.GetUser());
+                        if (prodResp.Success && prodResp.Entry != null)
+                        {
+                            foreach (var product in prodResp.Entry)
+                            {
+                                totalPrice += product.RegularPrice;
+
+                                <li class="header-cart-item flex-w flex-t m-b-12">
+                                    <div class="header-cart-item-img">
+                                        <img src="@product.Image0">
+                                    </div>
+
+                                    <div class="header-cart-item-txt p-t-8">
+                                        <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+                                            @product.ProductName
+                                        </a>
+
+                                        <span class="header-cart-item-info">
+                                            @product.RegularPrice
+                                        </span>
+                                        <span class="header-cart-item-info">
+                                            <a href="javascript:void(0)" onclick="DeleteFromCart(@product.Id)">Delete</a>
+                                        </span>
+                                    </div>
+                                </li>
+                            }
+                        }
+
+                    }
+                </ul>
+
+                <div class="w-full">
+                    <div class="header-cart-total w-full p-tb-40">
+                        Total: $@totalPrice
+                    </div>
+
+                    <div class="header-cart-buttons flex-w w-full">
+                        <a href="/viewcart" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+                            View Cart
+                        </a>
+
+                        <a href="/checkout" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+                            Check Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

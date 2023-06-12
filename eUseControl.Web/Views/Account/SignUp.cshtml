@@ -1,0 +1,89 @@
+﻿@model WebAplication.Models.UserRegisterForm
+
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/Layouts/_Authentication.cshtml";
+}
+
+<body>
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+            <div class="mask d-flex justify-content-center h-100 gradient-custom-3">
+                <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+
+                        <h4 class="mtext-105 cl2 txt-center p-b-30">
+                            Create an account
+                        </h4>
+
+                        @Html.ValidationMessageFor(x => x.Name)
+                        <div class="bor8 m-b-20 how-pos4-parent">
+                            @Html.TextBoxFor(x => x.Name, new
+                            {
+                                @class = "stext-117 cl2 plh3 size-116 p-l-30 p-r-30",
+                                placeholder = "Name"
+                            })
+                        </div>
+
+                        @Html.ValidationMessageFor(x => x.Surname)
+                        <div class="bor8 m-b-20 how-pos4-parent">
+                            @Html.TextBoxFor(x => x.Surname, new
+                            {
+                                @class = "stext-117 cl2 plh3 size-116 p-l-30 p-r-30",
+                                placeholder = "Surname"
+                            })
+                        </div>
+
+                        @Html.ValidationMessageFor(x => x.Email)
+                        <div class="bor8 m-b-20 how-pos4-parent">
+                            @Html.TextBoxFor(x => x.Email, new
+                            {
+                                @class = "stext-117 cl2 plh3 size-116 p-l-30 p-r-30",
+                                placeholder = "Email",
+                                type = "email"
+                            })
+                        </div>
+
+                        @Html.ValidationMessageFor(x => x.Password)
+                        <div class="bor8 m-b-20 how-pos4-parent">
+                            @Html.PasswordFor(x => x.Password, new
+                            {
+                                @class = "stext-117 cl2 plh3 size-116 p-l-30 p-r-30",
+                                placeholder = "Password"
+                            })
+                        </div>
+
+                        @Html.ValidationMessageFor(x => x.ConfirmPassword)
+                        <div class="bor8 m-b-20 how-pos4-parent">
+                            @Html.PasswordFor(x => x.ConfirmPassword, new
+                            {
+                                @class = "stext-117 cl2 plh3 size-116 p-l-30 p-r-30",
+                                placeholder = "Confirm Password"
+                            })
+                        </div>
+
+                        <div>
+                            <div class="mb-3 stext-111 cl6 p-b-26">
+                                By clicking register you are accepting our
+                                <a class="cl1" href="#">Terms & Conditions and Security</a> and
+                                <a class="cl1" href="#">Privacy & Cookie Policy</a>
+                            </div>
+
+                            <div class="d-flex justify-content-center">
+                                <button class="flex-c-m stext-101 cl0 size-118 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
+                                    Sign Up
+                                </button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
