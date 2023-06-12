@@ -1,47 +1,37 @@
-﻿using eUseControl.Domain.Entities.Products;
+﻿using eUseControl.BusinessLogic.Core;
+using eUseControl.BusinessLogic.Interfaces;
+using eUseControl.Domain.Entities.Products;
+using eUseControl.Domain.Entities.Response;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 
 namespace eUseControl.BusinessLogic.Services
 {
-    public class ProductService : BaseService
+    public class ProductService : ProductApi, IProduct
     {
-        public ServiceResponse<Product> Add(Product product)
+        public List<Product> GetProductList()
         {
-            DbContext.Products.Add(product);
-            DbContext.SaveChanges();
-            return Success(product);
+            return AllProducts();
         }
-
-        public ServiceResponse<Product> Edit(Product product)
+        public Product GetProductById(int id)
         {
-            DbContext.Entry(product).State = EntityState.Modified;
-            DbContext.SaveChanges();
-            return Success(product);
+            return ProductById(id);
         }
-
-        public ServiceResponse<Product> Delete(Product product)
+        public Product GetProductByName(string productName)
         {
-            DbContext.Entry(product).State = EntityState.Deleted;
-            DbContext.SaveChanges();
-            return Success(product);
+            return ProductByName(productName);
         }
-
-        public ServiceResponse<List<Product>> GetAll()
+        public ServiceResponse ValidateEditProduct(Product product)
         {
-            var entries = DbContext.Products
-                .ToList();
-
-            return Success(entries);
+            return ReturnEditProductStatus(product);
         }
-
-        public ServiceResponse<Product> GetById(int id)
+        public ServiceResponse ValidateDeleteProduct(Product product)
         {
-            var entry = DbContext.Products
-                .FirstOrDefault(x => x.Id == id);
-
-            return Success(entry);
+            return ReturnDeleteProductStatus(product);
+        }
+        public ServiceResponse ValidateCreateProduct(ProductData product)
+        {
+            return ReturnCreateProductStatus(product);
         }
     }
 }

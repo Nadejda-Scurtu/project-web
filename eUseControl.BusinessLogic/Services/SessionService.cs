@@ -1,13 +1,32 @@
-﻿using eUseControl.Domain.Entities;
+﻿using eUseControl.BusinessLogic.Core;
+using eUseControl.BusinessLogic.Interfaces;
+using eUseControl.Domain.Entities;
+using eUseControl.Domain.Entities.Response;
 using System.Linq;
+using static eUseControl.BusinessLogic.Core.SessionApi;
 
 namespace eUseControl.BusinessLogic.Services
 {
-    public class SessionService : BaseService
+    public class SessionService : SessionApi, ISession
     {
-        public ServiceResponse<SDbModel> GetByToken(string token)
+        public ServiceResponse ValidateUserCredential(LoginData user)
         {
-            return Success(DbContext.Sessions.FirstOrDefault(x => x.Token == token));
+            return ReturnCredentialStatus(user);
+        }
+
+        public ServiceResponse ValidateUserRegister(RegisterData user)
+        {
+            return ReturnRegisterStatus(user);
+        }
+
+        public CookieResponse GenCookie(string nickname)
+        {
+            return CookieGeneratorAction(nickname);
+        }
+
+        public User GetUserByCookie(string apiCookieValue)
+        {
+            return UserCookie(apiCookieValue);
         }
     }
 }
