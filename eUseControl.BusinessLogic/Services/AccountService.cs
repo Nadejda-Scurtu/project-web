@@ -16,19 +16,19 @@ namespace eUseControl.BusinessLogic.Services
             public DateTime Time { get; set; }
         }
 
-        public ServiceResponse<Session> Login(LoginData data)
+        public ServiceResponse<SDbModel> Login(LoginData data)
         {
             var passHash = AuthHelper.GeneratePasswordHash(data.Password);
 
             var user = DbContext.Users.FirstOrDefault(x => x.Email == data.Email && x.PasswordHash == passHash);
             if (user == null)
-                return Failure<Session>("User with this pair not found");
+                return Failure<SDbModel>("User with this pair not found");
 
             user.LoginIP = data.IpAddress;
             user.LoginDateTime = data.Time;
             DbContext.Entry(user).State = EntityState.Modified;
 
-            var session = new Session()
+            var session = new SDbModel()
             {
                 Token = AuthHelper.GenerateSessionToken(user.Name),
                 UserId = user.ID

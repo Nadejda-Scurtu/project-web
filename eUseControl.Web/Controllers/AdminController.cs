@@ -1,11 +1,11 @@
 ﻿using eUseControl.BusinessLogic.Services;
 using eUseControl.Controllers;
-using eUseControl.Domain.Entities;
 using System.IO;
 using System;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Services.Description;
+using eUseControl.Domain.Entities.Products;
 
 namespace WebAplication.Controllers
 {

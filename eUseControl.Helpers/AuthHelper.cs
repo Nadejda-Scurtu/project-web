@@ -15,12 +15,12 @@ namespace eUseControl.Helpers
             var encodingBytes = md5.ComputeHash(originalBytes);
 
             return BitConverter.ToString(encodingBytes).Replace("-", "").ToLower();
-		}
+        }
 
-		private static string SESSION_SALT = "ASDAFASFAS";
+        private static string SESSION_SALT = "ASDAFASFAS";
 
-		public static string GenerateSessionToken(string login)
-		{
+        public static string GenerateSessionToken(string login)
+        {
             // Generate random token salt.
             var rand = new Random();
             var bytes = new byte[32];
@@ -30,11 +30,11 @@ namespace eUseControl.Helpers
             var strToken = rndSalt + login + SESSION_SALT;
 
             using (var md5 = new MD5CryptoServiceProvider())
-			{
-				var originalBytes = Encoding.Default.GetBytes(strToken);
-				var encodingBytes = md5.ComputeHash(originalBytes);
-				return BitConverter.ToString(encodingBytes).Replace("-", "").ToLower();
-			}
-		}
-	}
+            {
+                var originalBytes = Encoding.Default.GetBytes(strToken);
+                var encodingBytes = md5.ComputeHash(originalBytes);
+                return BitConverter.ToString(encodingBytes).Replace("-", "").ToLower();
+            }
+        }
+    }
 }

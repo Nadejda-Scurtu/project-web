@@ -1,4 +1,5 @@
 ﻿using eUseControl.Domain.Entities;
+using eUseControl.Domain.Entities.Products;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
